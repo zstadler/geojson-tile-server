@@ -21,7 +21,7 @@ npm i -g geojson-tile-server
 ### Source
 
 ```bash
-git clone https://github.com/DanielFlamino/geojson-tile-server.git
+git clone https://github.com/MagicalBlob/geojson-tile-server.git
 cd geojson-tile-server
 npm i
 npm start
