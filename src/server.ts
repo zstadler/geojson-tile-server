@@ -87,7 +87,7 @@ const startService = async (
   app.get("/:layer/:z/:x/:y.geojson", (req, res) => {
     const { tile, x = 0, y = 0, z = 0 } = getTile(req, res);
     if (!tile || !tile.features) {
-      return res.json({});
+      return res.json({"type":"FeatureCollection","features":[]});
     }
     const vectorTiles = tile.features as IVectorTile[];
     res.json(toFeatureCollection(vectorTiles, x, y, z, extent));
