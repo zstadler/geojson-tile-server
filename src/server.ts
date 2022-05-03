@@ -96,6 +96,7 @@ const startService = async (
   app.get("/:layer/:z/:x/:y.vt", (req, res) => {
     const { tile } = getTile(req, res);
     if (!tile || !tile.features) {
+      res.sendStatus(204);
       return;
     }
     const vectorTiles = tile.features as IVectorTile[];
@@ -105,6 +106,7 @@ const startService = async (
   app.get("/:layer/:z/:x/:y.mvt", (req, res) => {
     const { tile } = getTile(req, res);
     if (!tile || !tile.features) {
+      res.sendStatus(204);
       return;
     }
     /** Notice that I set the source-layer (for Mapbox GL) to all */
